@@ -1,0 +1,132 @@
+{
+  "v": "4.0",
+  "name": "Android",
+  "workspace": {
+    "environments": [
+      {
+        "name": "ubuntu_android",
+        "machineConfigs": [
+          {
+            "limits": {
+              "ram": 2000
+            },
+            "name": "ws-machine",
+            "type": "docker",
+            "source": {
+              "location": "http://beta.codenvy.com/api/recipe/recipeeypjl2op7oozcp07/script",
+              "type": "recipe"
+            },
+            "dev": true,
+            "servers": [],
+            "envVariables": {},
+            "links": []
+          }
+        ]
+      }
+    ],
+    "defaultEnv": "ubuntu_android",
+    "projects": [
+      {
+        "links": [],
+        "name": "mobile-android-simple",
+        "attributes": {
+          "maven.artifactId": [
+            "maven-android"
+          ],
+          "maven.test.source.folder": [
+            "src/test/java"
+          ],
+          "maven.parent.version": [
+            ""
+          ],
+          "maven.parent.groupId": [
+            ""
+          ],
+          "maven.version": [
+            "0.1.0"
+          ],
+          "languageVersion": [
+            "1.8.0_45"
+          ],
+          "language": [
+            "java"
+          ],
+          "contribute_to_branch": [
+            "master"
+          ],
+          "maven.source.folder": [
+            "src/main/java"
+          ],
+          "git.repository.remotes": [
+            "https://github.com/che-samples/mobile-android-simple.git"
+          ],
+          "maven.groupId": [
+            "org.hello"
+          ],
+          "containsJavaFiles": [
+            "true"
+          ],
+          "maven.packaging": [
+            "apk"
+          ],
+          "vcs.provider.name": [
+            "git"
+          ],
+          "git.current.branch.name": [
+            "master"
+          ],
+          "maven.parent.artifactId": [
+            ""
+          ]
+        },
+        "type": "maven",
+        "source": {
+          "location": "https://github.com/che-samples/mobile-android-simple.git",
+          "type": "git",
+          "parameters": {}
+        },
+        "path": "/mobile-android-simple",
+        "problems": [],
+        "mixins": [
+          "git"
+        ]
+      }
+    ],
+    "name": "ubuntu_android",
+    "commands": [
+      {
+        "commandLine": "mvn -f ${current.project.path} clean install",
+        "name": "build-n-run",
+        "attributes": {
+          "previewUrl": "http://${server.port.6080}/"
+        },
+        "type": "mvn"
+      }
+    ],
+    "links": []
+  },
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "name": "build-n-run"
+          },
+          "id": "runCommand"
+        },
+        {
+          "properties": {
+            "file": "/mobile-android-simple/src/main/java/org/hello/HelloActivity.java"
+          },
+          "id": "openFile"
+        },
+        {
+          "properties": {
+            "file": "/mobile-android-simple/README.md"
+          },
+          "id": "openFile"
+        }
+      ]
+    }
+  }
+}
